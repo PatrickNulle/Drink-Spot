@@ -71,9 +71,9 @@ export default function SocialsView() {
         <motion.div
           animate={{ y: [0, -8, 0], rotate: [-8, 8, -8] }}
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute left-4 -top-6 hidden lg:block"
+          className="absolute left-0 lg:left-4 -top-4 lg:-top-6"
         >
-          <Sparkles className="w-14 h-14 text-vintage-red fill-vintage-red/15" />
+          <Sparkles className="w-8 h-8 lg:w-14 lg:h-14 text-vintage-red fill-vintage-red/15" />
         </motion.div>
         
         <motion.h1 
@@ -95,7 +95,7 @@ export default function SocialsView() {
       </div>
 
       {/* Social Links Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+      <div className="grid grid-cols-3 gap-3 md:gap-6 mb-6">
         {SOCIAL_LINKS.map((social) => (
           <motion.a
             key={social.id}
@@ -103,17 +103,17 @@ export default function SocialsView() {
             target="_blank"
             rel="noopener noreferrer"
             variants={itemVariants}
-            className={`group flex items-center justify-center relative rounded-[2rem] md:rounded-[2.5rem] ${social.color} border-4 ${social.borderColor} p-4 md:p-6 cursor-pointer min-h-[140px] md:min-h-[200px]`}
+            className={`group flex items-center justify-center relative rounded-[1.5rem] lg:rounded-[2.5rem] ${social.color} border-4 ${social.borderColor} p-3 lg:p-6 cursor-pointer min-h-[100px] lg:min-h-[200px]`}
             style={{
-              boxShadow: `6px 6px 0px 0px ${social.shadowColor}`,
+              boxShadow: `4px 4px 0px 0px ${social.shadowColor}`,
             }}
             whileHover={{
-              boxShadow: `10px 10px 0px 0px ${social.shadowColor}`,
+              boxShadow: `8px 8px 0px 0px ${social.shadowColor}`,
             }}
           >
             {/* Large Centered Logo */}
-            <div className={`w-20 h-20 md:w-24 md:h-24 ${social.logoBg} ${social.logoColor} border-4 border-charcoal rounded-2xl md:rounded-3xl flex items-center justify-center group-hover:rotate-6 group-hover:scale-110 shadow-[4px_4px_0px_0px_rgba(34,34,34,1)]`}>
-              <social.icon className="w-10 h-10 md:w-12 md:h-12 stroke-[2.5]" />
+            <div className={`w-12 h-12 lg:w-24 lg:h-24 ${social.logoBg} ${social.logoColor} border-2 lg:border-4 border-charcoal rounded-xl lg:rounded-3xl flex items-center justify-center group-hover:rotate-6 group-hover:scale-110 shadow-[3px_3px_0px_0px_rgba(34,34,34,1)]`}>
+              <social.icon className="w-6 h-6 lg:w-12 lg:h-12 stroke-[2.5]" />
             </div>
           </motion.a>
         ))}
@@ -122,10 +122,10 @@ export default function SocialsView() {
       {/* Decorative Interactive Block */}
       <motion.div 
         variants={itemVariants}
-        className="bg-card rounded-[2rem] md:rounded-[2.5rem] border-4 border-charcoal p-6 md:p-10 text-center max-w-2xl mx-auto shadow-[6px_6px_0px_0px_rgba(34,34,34,1)] md:shadow-[8px_8px_0px_0px_rgba(34,34,34,1)] relative overflow-hidden"
+        className="bg-card rounded-[2rem] md:rounded-[2.5rem] border-4 border-charcoal p-6 md:p-10 text-center max-w-2xl mx-auto shadow-[6px_6px_0px_0px_rgba(34,34,34,1)] md:shadow-[8px_8px_0px_0px_rgba(34,34,34,1)] relative overflow-hidden mt-32 md:mt-12"
       >
-        <div className="absolute -right-8 -bottom-8 w-20 h-20 md:w-24 md:h-24 bg-yellow-100 rounded-full border-4 border-charcoal flex items-center justify-center transform rotate-12 hidden sm:flex">
-          <Heart className="w-6 h-6 md:w-8 md:h-8 text-vintage-red fill-vintage-red" />
+        <div className="absolute -right-4 -bottom-4 lg:-right-8 lg:-bottom-8 w-12 h-12 lg:w-24 lg:h-24 bg-yellow-100 rounded-full border-4 border-charcoal flex items-center justify-center transform rotate-12">
+          <Heart className="w-4 h-4 lg:w-8 lg:h-8 text-vintage-red fill-vintage-red" />
         </div>
         <h4 className="font-display font-black text-charcoal text-xl md:text-2xl uppercase tracking-tight mb-3">
           Tag Us in Your Photos!

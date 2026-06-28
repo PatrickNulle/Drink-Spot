@@ -25,20 +25,20 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       </svg>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-4 pb-12 md:pt-8 md:pb-16 px-4 sm:px-6 lg:px-8 bg-transparent min-h-screen flex items-center">
+      <section className="relative overflow-hidden pt-2 pb-12 md:pt-8 md:pb-16 px-4 sm:px-6 lg:px-8 bg-transparent min-h-[calc(100vh-200px)] md:min-h-screen flex items-start md:items-center">
         {/* Floating Bubble Background Elements - Removed as requested */}
 
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:items-start items-center relative z-10">
-          <div className="space-y-6 z-20 flex flex-col items-center">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 md:items-start items-center relative z-10 mt-2 md:mt-0">
+          <div className="space-y-4 md:space-y-6 z-20 flex flex-col items-center">
             <div className="relative flex items-center justify-center gap-2 md:gap-4">
               {/* Fun floating star sticker */}
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="text-vintage-red drop-shadow-md hidden sm:block"
+                className="text-vintage-red drop-shadow-md"
               >
-                <Sparkles className="w-8 h-8 md:w-12 md:h-12 fill-vintage-red" />
+                <Sparkles className="w-6 h-6 lg:w-12 lg:h-12 fill-vintage-red" />
               </motion.div>
 
               <motion.div 
@@ -54,9 +54,9 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               <motion.div
                 animate={{ rotate: -360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="text-vintage-red drop-shadow-md hidden sm:block"
+                className="text-vintage-red drop-shadow-md"
               >
-                <Sparkles className="w-8 h-8 md:w-12 md:h-12 fill-vintage-red" />
+                <Sparkles className="w-6 h-6 lg:w-12 lg:h-12 fill-vintage-red" />
               </motion.div>
             </div>
             
@@ -108,7 +108,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             initial={{ opacity: 0, x: 50, rotate: 10 }}
             animate={{ opacity: 1, x: 0, rotate: 0 }}
             transition={{ delay: 0.3, type: 'spring', bounce: 0.5 }}
-            className="relative z-10 md:pt-24"
+            className="relative z-10 -mt-4 md:mt-0 md:pt-24"
           >
             {/* Oversized Hero Image container */}
             <div className="relative aspect-[4/3] w-full max-w-md mx-auto">
@@ -118,20 +118,20 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               <motion.div 
                 animate={{ y: [0, -15, 0], rotate: [5, -5, 5] }}
                 transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                className="absolute top-10 -left-10 z-20 bg-warm-cream rounded-full p-4 border-4 border-charcoal shadow-[8px_8px_0px_0px_rgba(34,34,34,1)] transform -rotate-12"
+                className="absolute top-4 -left-2 lg:top-10 lg:-left-10 z-20 bg-warm-cream rounded-full p-2 lg:p-4 border-4 border-charcoal shadow-[4px_4px_0px_0px_rgba(34,34,34,1)] lg:shadow-[8px_8px_0px_0px_rgba(34,34,34,1)] transform -rotate-12"
               >
-                <span className="font-display font-black text-vintage-red text-xl whitespace-nowrap">YUM!</span>
+                <span className="font-display font-black text-vintage-red text-sm lg:text-xl whitespace-nowrap">YUM!</span>
               </motion.div>
 
               <motion.div 
                 animate={{ y: [0, 15, 0], rotate: [-10, 10, -10] }}
                 transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
-                className="absolute bottom-20 -right-8 z-20 bg-mint-green rounded-full p-3 border-4 border-charcoal shadow-[6px_6px_0px_0px_rgba(34,34,34,1)] transform rotate-12"
+                className="absolute bottom-10 -right-2 lg:bottom-20 lg:-right-8 z-20 bg-mint-green rounded-full p-2 lg:p-3 border-4 border-charcoal shadow-[4px_4px_0px_0px_rgba(34,34,34,1)] lg:shadow-[6px_6px_0px_0px_rgba(34,34,34,1)] transform rotate-12"
               >
-                <Cherry className="w-10 h-10 text-charcoal" />
+                <Cherry className="w-6 h-6 lg:w-10 lg:h-10 text-charcoal" />
               </motion.div>
               
-              <div className="absolute inset-0 rounded-[3rem] overflow-hidden shadow-[12px_12px_0px_0px_rgba(34,34,34,1)] border-8 border-charcoal bg-warm-cream z-10">
+              <div className="absolute inset-0 rounded-[2rem] lg:rounded-[3rem] overflow-hidden shadow-[8px_8px_0px_0px_rgba(34,34,34,1)] lg:shadow-[12px_12px_0px_0px_rgba(34,34,34,1)] border-4 lg:border-8 border-charcoal bg-warm-cream z-10">
                 <Image 
                   src="https://laedbhyfxdkxsztxsjkd.supabase.co/storage/v1/object/public/Website%20Images/Drink%20Spot/Beverages.jpg" 
                   alt="Refreshing Dirty Soda" 
@@ -149,17 +149,17 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       <section className="py-10 md:py-14 px-4 sm:px-6 lg:px-8 bg-transparent relative overflow-hidden">
         {/* Decorative background shapes removed */}
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center relative z-10">
-           <div className="order-2 lg:order-1 relative">
-              <div className="relative aspect-[4/3] w-full max-w-lg mx-auto">
+        <div className="max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-8 lg:items-center relative z-10 text-center lg:text-left">
+           <div className="contents lg:block lg:order-1 relative">
+              <div className="order-2 lg:order-none relative aspect-[4/3] w-full max-w-lg mx-auto mt-4 mb-2 lg:mt-0 lg:mb-0">
                  <motion.div 
                     animate={{ y: [0, -10, 0], rotate: [-12, -18, -12] }}
                     transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                    className="absolute top-10 -left-4 z-30 bg-vintage-red text-white font-black p-4 rounded-full border-4 border-charcoal shadow-[-6px_6px_0px_0px_rgba(34,34,34,1)]"
+                    className="absolute top-4 -left-2 lg:top-10 lg:-left-4 z-30 bg-vintage-red text-white font-black p-2 lg:p-4 rounded-full border-4 border-charcoal shadow-[-4px_4px_0px_0px_rgba(34,34,34,1)] lg:shadow-[-6px_6px_0px_0px_rgba(34,34,34,1)] text-xs lg:text-base"
                  >
                     So refreshing!
                  </motion.div>
-                 <div className="absolute inset-0 bg-card rounded-[3rem] shadow-[16px_16px_0px_0px_rgba(34,34,34,1)] border-8 border-charcoal overflow-hidden">
+                 <div className="absolute inset-0 bg-card rounded-[2rem] lg:rounded-[3rem] shadow-[10px_10px_0px_0px_rgba(34,34,34,1)] lg:shadow-[16px_16px_0px_0px_rgba(34,34,34,1)] border-4 lg:border-8 border-charcoal overflow-hidden">
                     <Image src="https://laedbhyfxdkxsztxsjkd.supabase.co/storage/v1/object/public/Website%20Images/Drink%20Spot/Beverage%203.png" alt="Soda Shop Fun" fill className="object-cover" referrerPolicy="no-referrer" />
                  </div>
                  
@@ -168,27 +168,27 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                  <motion.div 
                     animate={{ y: [0, 10, 0], rotate: [12, 18, 12] }}
                     transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
-                    className="absolute -top-8 -right-8 z-30 bg-mint-green text-charcoal font-black p-6 rounded-full border-4 border-charcoal shadow-[6px_6px_0px_0px_rgba(34,34,34,1)]"
+                    className="absolute -top-4 -right-2 lg:-top-8 lg:-right-8 z-30 bg-mint-green text-charcoal font-black p-3 lg:p-6 rounded-full border-4 border-charcoal shadow-[4px_4px_0px_0px_rgba(34,34,34,1)] lg:shadow-[6px_6px_0px_0px_rgba(34,34,34,1)]"
                  >
-                    <span className="text-3xl">🏖️🚗</span>
+                    <span className="text-xl lg:text-3xl">🏖️🚗</span>
                  </motion.div>
               </div>
            </div>
            
-           <div className="order-1 lg:order-2 space-y-5">
+           <div className="contents lg:block lg:order-2 lg:space-y-5 text-center lg:text-left">
              <motion.h2 
                 animate={{ rotate: [0, -1, 1, 0], scale: [1, 1.01, 1] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="text-4xl md:text-7xl font-display font-black text-charcoal uppercase leading-[0.9] md:leading-[0.95] tracking-tight"
+                className="order-1 lg:order-none text-4xl md:text-7xl font-display font-black text-charcoal uppercase leading-[0.9] md:leading-[0.95] tracking-tight"
              >
                Every<br/>
                <span onClick={() => onNavigate('menu')} className="text-vintage-red sticker-border inline-block hover:scale-105 transition-transform cursor-pointer">Sip&apos;s</span><br/>
                A Trip
              </motion.h2>
-             <p className="text-base md:text-lg text-charcoal/80 font-medium leading-relaxed bg-card/60 p-4 md:p-6 rounded-3xl border-2 border-white/80">
+             <p className="order-3 lg:order-none mt-4 lg:mt-0 text-base md:text-lg text-charcoal/80 font-medium leading-relaxed bg-card/60 p-4 md:p-6 rounded-3xl border-2 border-white/80 mx-auto lg:mx-0">
                Handcrafted <a href="https://www.campuscafe.ca/dirty-soda/" target="_blank" rel="noopener noreferrer" className="underline hover:text-vintage-red">dirty sodas</a> and refreshing creations made to brighten your day at the Jersey Shore.
              </p>
-             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+             <div className="order-4 lg:order-none mt-6 lg:mt-0 grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 text-left">
                 <div className="bg-card p-6 md:p-8 rounded-3xl shadow-[4px_4px_0px_0px_rgba(34,34,34,1)] border-4 border-charcoal transform hover:-translate-y-2 transition-transform">
                   <h4 className="font-display font-black text-charcoal text-xl md:text-2xl mb-2 md:mb-3 uppercase tracking-wide">Discover Your Next Favorite</h4>
                   <p className="text-charcoal/80 text-sm md:text-base font-semibold leading-relaxed">One sip is all it takes.</p>
@@ -205,8 +205,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       {/* Storefront Section */}
       <section className="py-8 md:py-10 px-4 sm:px-6 lg:px-8 bg-transparent relative flex justify-center">
         <div className="w-full max-w-5xl">
-          <div className="bg-card p-2 rounded-[1rem] shadow-[4px_4px_0px_0px_rgba(34,34,34,1)] border-4 border-charcoal">
-            <a href="https://maps.app.goo.gl/JyftyuQwtcdgcWSv6" target="_blank" rel="noopener noreferrer" className="relative h-[350px] sm:h-[450px] md:h-[600px] w-full rounded-lg overflow-hidden group block cursor-pointer">
+            <a href="https://maps.app.goo.gl/JyftyuQwtcdgcWSv6" target="_blank" rel="noopener noreferrer" className="relative aspect-[4/3] lg:aspect-auto lg:h-[600px] w-full rounded-[1rem] overflow-hidden group block cursor-pointer shadow-[4px_4px_0px_0px_rgba(34,34,34,1)] border-4 border-charcoal">
               <Image 
                 src="https://laedbhyfxdkxsztxsjkd.supabase.co/storage/v1/object/public/Website%20Images/Drink%20Spot/Storefront.png?v=2"
                 alt="Drink Spot Storefront"
@@ -216,7 +215,6 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               />
               <div className="absolute inset-0 bg-charcoal/5 mix-blend-multiply pointer-events-none" />
             </a>
-          </div>
         </div>
       </section>
     </motion.div>
