@@ -1,0 +1,218 @@
+@import "tailwindcss";
+
+:root {
+  --theme-color-rgb: 243, 218, 172; /* Vanilla gold/cream */
+  --theme-color-primary: #F3DAAC;
+  --theme-bg-color: #FAF5EA;
+  --theme-card-bg: #FFFFFF;
+  --theme-checker-opacity: 0.38;
+  --theme-checker-color: transparent;
+  --theme-vintage-red: #D7342C;
+  --theme-charcoal: #222222;
+}
+
+.theme-vanilla {
+  --theme-color-rgb: 243, 218, 172;
+  --theme-color-primary: #F3DAAC;
+  --theme-bg-color: #FAF5EA;
+  --theme-card-bg: #FFFFFF;
+  --theme-checker-opacity: 0.38;
+  --theme-checker-color: transparent;
+}
+
+.theme-mint {
+  --theme-color-rgb: 146, 203, 184;
+  --theme-color-primary: #92CBB8;
+  --theme-bg-color: #EBF5F1;
+  --theme-checker-opacity: 0.28;
+  --theme-checker-color: #9CD1C0;
+}
+
+.theme-cherry {
+  --theme-color-rgb: 215, 52, 44;
+  --theme-color-primary: #D7342C;
+  --theme-bg-color: #FFF2F2;
+  --theme-checker-opacity: 0.18;
+  --theme-checker-color: #FFA1A1;
+  --theme-vintage-red: #92CBB8; /* Mint colored text for Cherry theme */
+  
+  --color-vintage-red: #92CBB8 !important;
+}
+
+.text-vintage-red {
+  -webkit-text-stroke: 2.5px #222222;
+  paint-order: stroke fill;
+}
+
+.thicker-outline {
+  -webkit-text-stroke: 4.5px #222222 !important;
+  paint-order: stroke fill;
+}
+
+.sticker-border {
+  -webkit-text-stroke: 7px #222222 !important;
+  paint-order: stroke fill;
+}
+
+.theme-cola {
+  --theme-color-rgb: 61, 35, 20;
+  --theme-color-primary: #3D2314;
+  --theme-bg-color: #F7F3EE;
+  --theme-checker-opacity: 0.18;
+  --theme-checker-color: #BEAA95;
+}
+
+.theme-fanta {
+  --theme-color-rgb: 234, 88, 12;
+  --theme-color-primary: #EA580C;
+  --theme-bg-color: #FFF3E6;
+  --theme-checker-opacity: 0.18;
+  --theme-checker-color: #FFB076;
+}
+
+.theme-peach {
+  --theme-color-rgb: 253, 186, 116;
+  --theme-color-primary: #FDBA74;
+  --theme-bg-color: #FFF8F0;
+  --theme-checker-opacity: 0.25;
+  --theme-checker-color: #FFC28E;
+}
+
+.theme-pineapple {
+  --theme-color-rgb: 250, 204, 21;
+  --theme-color-primary: #FACC15;
+  --theme-bg-color: #FFFDF0;
+  --theme-checker-opacity: 0.25;
+  --theme-checker-color: #FCE170;
+}
+
+.theme-blue-razz {
+  --theme-color-rgb: 37, 99, 235;
+  --theme-color-primary: #2563EB;
+  --theme-bg-color: #EFF6FF;
+  --theme-checker-opacity: 0.28;
+  --theme-checker-color: #93C5FD;
+}
+
+@theme {
+  --color-mint-green: #92CBB8;
+  --color-warm-cream: var(--theme-bg-color, #F8EED9);
+  --color-card: var(--theme-card-bg, #FFFFFF);
+  --color-vintage-red: var(--theme-vintage-red, #D7342C);
+  --color-soft-teal: #6D8687;
+  --color-charcoal: var(--theme-charcoal, #222222);
+  
+  --font-sans: var(--font-fredoka), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-lilita-one), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Polished Grain Overlay */
+.grain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Theme-aware background overrides */
+[class*="theme-"] .bg-white {
+  background-color: var(--color-card) !important;
+}
+
+[class*="theme-"] .bg-white\/60 {
+  background-color: color-mix(in srgb, var(--color-card) 60%, transparent) !important;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-warm-cream);
+    color: var(--color-charcoal);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    transition: background-color 0.3s ease-in-out;
+  }
+}
+
+@layer utilities {
+  .bg-mint-checkerboard-subtle {
+    background-image: conic-gradient(
+      var(--theme-checker-color, #F5E5C9) 0deg 90deg, 
+      transparent 90deg 180deg, 
+      var(--theme-checker-color, #F5E5C9) 180deg 270deg, 
+      transparent 270deg 360deg
+    );
+    background-size: 60px 60px;
+  }
+  
+  .bg-mint-checkerboard-bold {
+    background-image: conic-gradient(
+      var(--theme-checker-color, #F5E5C9) 0deg 90deg, 
+      transparent 90deg 180deg, 
+      var(--theme-checker-color, #F5E5C9) 180deg 270deg, 
+      transparent 270deg 360deg
+    );
+    background-size: 80px 80px;
+    background-attachment: fixed;
+  }
+  
+  .glass-panel {
+    background: rgba(248, 238, 217, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .sticker-shadow {
+    filter: drop-shadow(0px 8px 12px rgba(0, 0, 0, 0.15));
+  }
+  
+  .sticker-border {
+    -webkit-text-stroke: 7px #222222 !important;
+    paint-order: stroke fill;
+  }
+
+  .ticket-badge {
+    position: relative;
+    background: var(--color-vintage-red);
+    color: var(--color-warm-cream);
+    padding: 0.5rem 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    clip-path: polygon(
+      0% 10%, 5% 10%, 5% 0%, 95% 0%, 95% 10%, 100% 10%, 100% 90%, 95% 90%, 95% 100%, 5% 100%, 5% 90%, 0% 90%
+    );
+  }
+
+  .wave-divider-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: translateY(-99%);
+  }
+  
+  .wave-divider-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: translateY(99%) rotate(180deg);
+  }
+
+  .wave-svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 60px;
+  }
+}
+
